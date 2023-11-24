@@ -667,9 +667,11 @@ opentelemetry-collector:
       pipelines:
         traces:
           processors: [memory_limiter, resource, batch]
-          exporters: [otlp, debug, spanmetrics]
+          # exporters: [otlp, debug, spanmetrics]
+          exporters: [otlp, debug]
         metrics:
-          receivers: [otlp, spanmetrics]
+          # receivers: [otlp, spanmetrics]
+          receivers: [otlp]
           processors: [memory_limiter, filter/ottl, transform, resource, batch]
           exporters: [otlphttp/prometheus, debug]
 
