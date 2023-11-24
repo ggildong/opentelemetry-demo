@@ -146,6 +146,9 @@ components:
       limits:
         memory: 20Mi
         cpu: 20m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -170,6 +173,10 @@ components:
       limits:
         memory: 300Mi
         cpu: 250m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   cartService:
     enabled: true
@@ -192,6 +199,10 @@ components:
       limits:
         memory: 160Mi
         cpu: 150m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-redis
         image: busybox:latest
@@ -226,6 +237,10 @@ components:
       limits:
         memory: 20Mi
         cpu: 20m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -246,6 +261,10 @@ components:
       limits:
         memory: 20Mi
         cpu: 20m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   emailService:
     enabled: true
@@ -264,6 +283,10 @@ components:
       limits:
         memory: 100Mi
         cpu: 80m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   featureflagService:
     enabled: true
@@ -289,6 +312,10 @@ components:
       limits:
         memory: 175Mi
         cpu: 150m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
     livenessProbe:
       httpGet:
         path: /featureflags/
