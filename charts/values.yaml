@@ -147,7 +147,7 @@ components:
         memory: 20Mi
         cpu: 20m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
     initContainers:
@@ -201,7 +201,7 @@ components:
         memory: 160Mi
         cpu: 150m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
     initContainers:
@@ -239,7 +239,7 @@ components:
         memory: 20Mi
         cpu: 20m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
     initContainers:
@@ -263,7 +263,7 @@ components:
         memory: 20Mi
         cpu: 20m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
 
@@ -285,7 +285,7 @@ components:
         memory: 100Mi
         cpu: 80m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
 
@@ -314,7 +314,7 @@ components:
         memory: 175Mi
         cpu: 150m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
     livenessProbe:
@@ -510,7 +510,7 @@ components:
         memory: 20Mi
         cpu: 20m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
 
@@ -583,7 +583,7 @@ components:
         memory: 20Mi
         cpu: 20m
     securityContext:
-      runAsNonRoot: true
+      # runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
 
