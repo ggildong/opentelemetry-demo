@@ -173,7 +173,7 @@ components:
     resources:
       limits:
         memory: 300Mi
-        cpu: 250m
+        cpu: 100m
     securityContext:
       runAsNonRoot: true
       allowPrivilegeEscalation: false
@@ -199,7 +199,7 @@ components:
     resources:
       limits:
         memory: 160Mi
-        cpu: 150m
+        cpu: 100m
     securityContext:
       # runAsNonRoot: true
       allowPrivilegeEscalation: false
@@ -312,7 +312,7 @@ components:
     resources:
       limits:
         memory: 175Mi
-        cpu: 150m
+        cpu: 100m
     securityContext:
       # runAsNonRoot: true
       allowPrivilegeEscalation: false
@@ -340,7 +340,7 @@ components:
     resources:
       limits:
         memory: 200Mi
-        cpu: 150m
+        cpu: 100m
     securityContext:
       runAsNonRoot: true
       allowPrivilegeEscalation: false
@@ -384,7 +384,7 @@ components:
     resources:
       limits:
         memory: 200Mi
-        cpu: 180m
+        cpu: 100m
     securityContext:
       runAsUser: 1001  # nextjs
       runAsGroup: 1001
@@ -559,7 +559,7 @@ components:
     resources:
       limits:
         memory: 500Mi            # This is high to enable supporting the recommendationCache feature flag use case
-        cpu: 350m
+        cpu: 100m
     securityContext:
       runAsNonRoot: true
       allowPrivilegeEscalation: false
@@ -636,7 +636,7 @@ components:
     resources:
       limits:
         memory: 500Mi
-        cpu: 350m
+        cpu: 100m
     securityContext:
       runAsUser: 1000  # appuser
       runAsGroup: 1000
@@ -676,7 +676,7 @@ opentelemetry-collector:
   resources:
     limits:
       memory: 200Mi
-      cpu: 180m
+      cpu: 100m
   service:
     type: ClusterIP
   ports:
@@ -772,7 +772,7 @@ jaeger:
     resources:
       limits:
         memory: 300Mi
-        cpu: 250m
+        cpu: 100m
   storage:
     type: none
   agent:
@@ -807,7 +807,7 @@ prometheus:
     resources:
       limits:
         memory: 300Mi
-        cpu: 250m
+        cpu: 100m
 
   serverFiles:
     prometheus.yml:
@@ -868,4 +868,4 @@ grafana:
   resources:
     limits:
       memory: 150Mi
-      cpu: 120m
+      cpu: 100m
