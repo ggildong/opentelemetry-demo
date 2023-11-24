@@ -149,6 +149,7 @@ components:
     securityContext:
       runAsNonRoot: true
       allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -340,6 +341,10 @@ components:
       limits:
         memory: 200Mi
         cpu: 150m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -384,6 +389,8 @@ components:
       runAsUser: 1001  # nextjs
       runAsGroup: 1001
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   frontendProxy:
     enabled: true
@@ -428,6 +435,8 @@ components:
       runAsUser: 101  # envoy
       runAsGroup: 101
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   loadgenerator:
     enabled: true
@@ -456,6 +465,10 @@ components:
       limits:
         memory: 120Mi
         cpu: 100m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   paymentService:
     enabled: true
@@ -476,6 +489,8 @@ components:
       runAsUser: 1000  # node
       runAsGroup: 1000
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   productCatalogService:
     enabled: true
@@ -494,6 +509,10 @@ components:
       limits:
         memory: 20Mi
         cpu: 20m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   quoteService:
     enabled: true
@@ -515,6 +534,8 @@ components:
       runAsUser: 33  # www-data
       runAsGroup: 33
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   recommendationService:
     enabled: true
@@ -539,6 +560,10 @@ components:
       limits:
         memory: 500Mi            # This is high to enable supporting the recommendationCache feature flag use case
         cpu: 350m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   shippingService:
     enabled: true
@@ -557,6 +582,10 @@ components:
       limits:
         memory: 20Mi
         cpu: 20m
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   ffsPostgres:
     enabled: true
@@ -584,6 +613,8 @@ components:
       runAsUser: 999  # postgres
       runAsGroup: 999
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   kafka:
     enabled: true
@@ -610,6 +641,8 @@ components:
       runAsUser: 1000  # appuser
       runAsGroup: 1000
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
   redis:
     enabled: true
@@ -630,6 +663,8 @@ components:
       runAsUser: 999  # redis
       runAsGroup: 1000
       runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
 opentelemetry-collector:
   enabled: true
