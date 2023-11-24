@@ -145,11 +145,6 @@ components:
     resources:
       limits:
         memory: 20Mi
-        cpu: 10m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -173,11 +168,6 @@ components:
     resources:
       limits:
         memory: 300Mi
-        cpu: 50m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   cartService:
     enabled: true
@@ -199,11 +189,6 @@ components:
     resources:
       limits:
         memory: 160Mi
-        cpu: 50m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-redis
         image: busybox:latest
@@ -237,11 +222,6 @@ components:
     resources:
       limits:
         memory: 20Mi
-        cpu: 10m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -261,11 +241,6 @@ components:
     resources:
       limits:
         memory: 20Mi
-        cpu: 10m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   emailService:
     enabled: true
@@ -283,11 +258,6 @@ components:
     resources:
       limits:
         memory: 100Mi
-        cpu: 40m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   featureflagService:
     enabled: true
@@ -312,11 +282,6 @@ components:
     resources:
       limits:
         memory: 175Mi
-        cpu: 40m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
     livenessProbe:
       httpGet:
         path: /featureflags/
@@ -340,11 +305,6 @@ components:
     resources:
       limits:
         memory: 200Mi
-        cpu: 40m
-    securityContext:
-      runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
     initContainers:
       - name: wait-for-kafka
         image: busybox:latest
@@ -384,13 +344,10 @@ components:
     resources:
       limits:
         memory: 200Mi
-        cpu: 40m
     securityContext:
       runAsUser: 1001  # nextjs
       runAsGroup: 1001
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   frontendProxy:
     enabled: true
@@ -430,13 +387,10 @@ components:
     resources:
       limits:
         memory: 50Mi
-        cpu: 20m
     securityContext:
       runAsUser: 101  # envoy
       runAsGroup: 101
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   loadgenerator:
     enabled: true
@@ -464,11 +418,6 @@ components:
     resources:
       limits:
         memory: 120Mi
-        cpu: 40m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   paymentService:
     enabled: true
@@ -484,13 +433,10 @@ components:
     resources:
       limits:
         memory: 120Mi
-        cpu: 40m
     securityContext:
       runAsUser: 1000  # node
       runAsGroup: 1000
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   productCatalogService:
     enabled: true
@@ -508,11 +454,6 @@ components:
     resources:
       limits:
         memory: 20Mi
-        cpu: 10m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   quoteService:
     enabled: true
@@ -530,13 +471,10 @@ components:
     resources:
       limits:
         memory: 40Mi
-        cpu: 10m
     securityContext:
       runAsUser: 33  # www-data
       runAsGroup: 33
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   recommendationService:
     enabled: true
@@ -560,11 +498,6 @@ components:
     resources:
       limits:
         memory: 500Mi            # This is high to enable supporting the recommendationCache feature flag use case
-        cpu: 50m
-    securityContext:
-      runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   shippingService:
     enabled: true
@@ -582,11 +515,6 @@ components:
     resources:
       limits:
         memory: 20Mi
-        cpu: 10m
-    securityContext:
-      # runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   ffsPostgres:
     enabled: true
@@ -609,13 +537,10 @@ components:
     resources:
       limits:
         memory: 120Mi
-        cpu: 40m
     securityContext:
       runAsUser: 999  # postgres
       runAsGroup: 999
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   kafka:
     enabled: true
@@ -637,13 +562,10 @@ components:
     resources:
       limits:
         memory: 500Mi
-        cpu: 40m
     securityContext:
       runAsUser: 1000  # appuser
       runAsGroup: 1000
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
   redis:
     enabled: true
@@ -659,13 +581,10 @@ components:
     resources:
       limits:
         memory: 20Mi
-        cpu: 10m
     securityContext:
       runAsUser: 999  # redis
       runAsGroup: 1000
       runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
 
 opentelemetry-collector:
   enabled: true
@@ -677,7 +596,6 @@ opentelemetry-collector:
   resources:
     limits:
       memory: 200Mi
-      cpu: 40m
   service:
     type: ClusterIP
   ports:
@@ -773,7 +691,6 @@ jaeger:
     resources:
       limits:
         memory: 300Mi
-        cpu: 50m
   storage:
     type: none
   agent:
@@ -808,7 +725,6 @@ prometheus:
     resources:
       limits:
         memory: 300Mi
-        cpu: 40m
 
   serverFiles:
     prometheus.yml:
@@ -869,4 +785,3 @@ grafana:
   resources:
     limits:
       memory: 150Mi
-      cpu: 30m
