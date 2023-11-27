@@ -410,7 +410,7 @@ components:
       - name: LOCUST_HEADLESS
         value: "false"
       - name: LOCUST_AUTOSTART
-        value: "true"
+        value: "false"
       - name: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
         value: python
       - name: OTEL_EXPORTER_OTLP_ENDPOINT
